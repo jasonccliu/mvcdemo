@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="testDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Mobile20160830">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserDisplayName" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeviceOS" Type="nvarchar" MaxLength="255" />
+          <Property Name="DeviceType" Type="nvarchar" MaxLength="255" />
+          <Property Name="WhenChanged" Type="datetime" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="testDBModelStoreContainer">
+          <EntitySet Name="Mobile20160830" EntityType="Self.Mobile20160830" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="testDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="testDBEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Mobile20160830" EntityType="testDBModel.Mobile20160830" />
+        </EntityContainer>
+        <EntityType Name="Mobile20160830">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="UserDisplayName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceOS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceType" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="WhenChanged" Type="DateTime" Precision="3" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="testDBModelStoreContainer" CdmEntityContainer="testDBEntities" >
+          <EntitySetMapping Name="Mobile20160830">
+            <EntityTypeMapping TypeName="testDBModel.Mobile20160830">
+              <MappingFragment StoreEntitySet="Mobile20160830">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="WhenChanged" ColumnName="WhenChanged" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="DeviceOS" ColumnName="DeviceOS" />
+                <ScalarProperty Name="UserDisplayName" ColumnName="UserDisplayName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

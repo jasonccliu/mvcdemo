@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVCDemo.Models.Mobile20160830>
+
+@{
+    ViewBag.Title = "myDataGrid";
+}
+
+<h2>myDataGrid</h2>
+
+ 
+
+<script language="javascript">
+
+$(document).ready(function () {
+    $("#list2").jqGrid({
+        url: '/mobile/getMobileInfo/',
+        datatype: "json",
+        contentType: "application/json; charset-utf-8",
+        mtype: 'GET',
+        colNames: ['ID', 'User Name', 'OS',
+        'Type'],
+        colModel: [
+            { name: 'id', index: 'id', label: '編號', width: 55, sorttype: "int" },
+            { name: 'UserDisplayName', index: 'UserDisplayName', width: 90 },
+            { name: 'DeviceOS', index: 'DeviceOS', width: 100 },
+            { name: 'DeviceType', index: 'DeviceType', width: 80 },
+
+        ],
+        rowNum: 5,
+        rowList: [5, 10, 15],
+        pager: '#pager2',
+        sortname: 'id',
+        viewrecords: true,
+        sortorder: "asc",
+        width: 660,
+        height: 'auto',
+        caption: "Mobile Devices"
+        ,
+        jsonReader: {
+            repeatitems: false
+        }
+    });
+    jQuery("#list2").jqGrid('navGrid', '#pager2',
+        { edit: false, add: false, del: false });
+});
+</script>
+
+
+<table id="list2"></table>
+<div id="pager2"></div>
