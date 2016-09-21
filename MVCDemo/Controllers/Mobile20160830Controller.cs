@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MVCDemo.Models;
+using MVCDemo.Utility;
 
 namespace MVCDemo.Controllers
 {
@@ -17,6 +18,7 @@ namespace MVCDemo.Controllers
         // GET: Mobile20160830
         public ActionResult Index()
         {
+            LogService.logger.Info("show mobile page");
             return View(db.Mobile20160830.Take(10).ToList());
         }
 

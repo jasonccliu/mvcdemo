@@ -1,0 +1,2 @@
+2016-09-21 13:49:36.0463 | INFO | MVCDemo.Utility.LogService | show mobile page 
+

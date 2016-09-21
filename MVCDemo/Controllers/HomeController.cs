@@ -22,6 +22,8 @@ namespace MVCDemo.Controllers
 
         public ActionResult Contact()
         {
+
+            throw new InvalidCastException();
             ViewBag.Message = "Your contact page.";
 
             return View();
