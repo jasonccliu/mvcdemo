@@ -1,0 +1,50 @@
+﻿@model MVCDemo.Models.Mobile20160830
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mobile20160830</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UserDisplayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserDisplayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceOS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceOS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeviceType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeviceType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WhenChanged)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WhenChanged)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
